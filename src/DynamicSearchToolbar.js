@@ -25,7 +25,7 @@ const DynamicSearchToolbar = (
     selectedRows,
     actions,
     onSearch,
-    ...props,
+    ...props
   }
 ) => {
   const classes = useStyles(props)
@@ -42,7 +42,7 @@ const DynamicSearchToolbar = (
           onClick: () => {}
         })}
         {subActions.length && (
-          <DynamicSearchActionsButton actions={subActions} selectedRows={selectedRows}/>
+          <DynamicSearchActionsButton actions={subActions} selectedRows={selectedRows} />
         )}
       </div>
       <div className={classes.search}>

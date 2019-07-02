@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import MenuList from '@material-ui/core/MenuList'
 import MenuItem from '@material-ui/core/MenuItem'
-import { useTranslation } from "react-i18next"
+import { useTranslation } from 'react-i18next'
 
 const DynamicSearchActionsButton = ({ actions, selectedRows, ...props }) => {
   const [open, setOpen] = React.useState(false)
@@ -41,23 +41,23 @@ const DynamicSearchActionsButton = ({ actions, selectedRows, ...props }) => {
         ref={anchorRef}
       >
         {t('actions')}
-        <ArrowDropDownIcon/>
+        <ArrowDropDownIcon />
       </Button>
       <Popper
         open={open}
         anchorEl={anchorRef.current}
         transition
         keepMounted
-        style={{display: !open && 'none'}}
+        style={{display: !open && 'none', zIndex: 2000}}
       >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
             style={{
-              transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
+              transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'
             }}
           >
-            <Paper id="menu-list-grow">
+            <Paper id='menu-list-grow'>
               <ClickAwayListener
                 onClickAway={handleClose}
                 mouseEvent={open && undefined} // IF open THEN default, ELSE none
